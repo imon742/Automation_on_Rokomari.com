@@ -24,5 +24,6 @@ public class TestCheckOut extends DriverSetup {
         checkOutPage.clickOnElement(checkOutPage.continueButton);
         checkOutPage.clickOnElement(checkOutPage.finishButton);
         Assert.assertEquals(checkOutPage.getElementText(checkOutPage.greetingsText), "Thank you for your order!");
+
     }
 }
