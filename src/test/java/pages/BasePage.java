@@ -29,6 +29,16 @@ public class BasePage {
         Actions actions = new Actions(getBrowser());
         actions.clickAndHold(getElement(locator)).build().perform();
     }
+    public void moveToElement(By locator){
+        Actions actions = new Actions(getBrowser());
+        actions.moveToElement(getElement(locator)).build().perform();
+
+    }
+    public void scrollIntoView(By locator) {
+        Actions actions = new Actions(getBrowser());
+        actions.moveToElement(getElement(locator)).build().perform();
+    }
+
 
     public void loadAWebPage(String url){
         getBrowser().get(url);
