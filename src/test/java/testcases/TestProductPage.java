@@ -26,7 +26,7 @@ public class TestProductPage extends DriverSetup {
     }
     //Rokomari product page
     @Test
-    public void testRokomariFilterAndPages(){
+    public void testRokomariFilterAndPages() throws InterruptedException {
         getBrowser().get(productPage.productPageURLRokomari);
         productPage.clickOnElement(productPage.popUpAdvertise);
         productPage.clickOnElement(productPage.bikeadvertise);
@@ -38,11 +38,15 @@ public class TestProductPage extends DriverSetup {
         productPage.clickOnElement(productPage.categories_রচনা_সংকলন_ও_সমগ্র);
         productPage.scrollIntoView(productPage.nextPage);
         productPage.clickOnElement(productPage.page2);
-        productPage.hoverOnElement(productPage.book_গৌরীপুর_জংশন);
-        productPage.moveToElement(productPage.book_গৌরীপুর_জংশন);
-        productPage.hoverOnElement(productPage.addToCart);
+
+        productPage.scrollIntoView(productPage.book_অপেক্ষা);
+      //  productPage.clickOnElement(productPage.book_অপেক্ষা);
+     //  productPage.hoverOnElement(productPage.book_অপেক্ষা);
+        productPage.moveToElement(productPage.book_অপেক্ষা);
         productPage.clickOnElement(productPage.addToCart);
-        productPage.clickOnElement(productPage.cart_Buton);
+
+        productPage.clickOnElement(productPage.cart_Button);
+        Thread.sleep(5000);
 
     }
 

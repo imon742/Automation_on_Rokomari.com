@@ -13,4 +13,12 @@ public class CheckOutPage extends  BasePage{
     public By greetingsText = By.xpath("//h2[@class='complete-header']");
 
 
+    //rokomari checkout
+    public By nameInputFiled = By.xpath("//div[@class='shipping-form-container']//input[@id='name']");
+    public By phoneNumberInputFiled = By.xpath("//fieldset[@class='group']//input[@id='phone']");
+    public By alternativePhoneNumberInputFiled = By.xpath("//fieldset[@class='group']//input[@id='phone2']");
+    public By selectCity = By.xpath("//select[@id='js--city']");
+
+
+
 }
