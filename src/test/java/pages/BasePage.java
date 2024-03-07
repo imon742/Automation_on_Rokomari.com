@@ -17,6 +17,7 @@ public class BasePage {
        return getBrowser().findElement(locator);
     }
 
+
     public void clickOnElement(By locator){
         getElement(locator).click();
     }
@@ -24,6 +25,7 @@ public class BasePage {
     public void writeOnAElement(By locator, String text){
         getElement(locator).sendKeys(text);
     }
+    public void clearInputOnElement(By locator){getElement(locator).clear();}
 
     public void hoverOnElement(By locator){
         Actions actions = new Actions(getBrowser());

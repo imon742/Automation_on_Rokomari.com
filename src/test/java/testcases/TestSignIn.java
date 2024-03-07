@@ -51,6 +51,9 @@ public class TestSignIn extends DriverSetup {
         productPage.scrollIntoView(productPage.placeOrderButton);
         productPage.clickOnElement(productPage.placeOrderButton);
         Thread.sleep(3000);
+        checkOutPage.clearInputOnElement(checkOutPage.nameInputFiled);
+        Thread.sleep(3000);
+
         checkOutPage.writeOnAElement(checkOutPage.nameInputFiled,"Nazmul Islam Emon");
         Thread.sleep(3000);
 
@@ -61,6 +64,7 @@ public class TestSignIn extends DriverSetup {
         Thread.sleep(3000);
         checkOutPage.clickOnElement(checkOutPage.selectCity);
         Thread.sleep(3000);
+       // checkOutPage.clickOnElement(checkOutPage.);
 
 
 
