@@ -5,10 +5,12 @@ import org.testng.annotations.Test;
 import pages.CheckOutPage;
 import pages.LoginPage;
 import pages.ProductPage;
+import pages.SignInPage;
 import uitilities.DriverSetup;
 
 public class TestCheckOut extends DriverSetup {
     LoginPage loginPage = new LoginPage();
+    SignInPage signInPage = new SignInPage();
     ProductPage productPage = new ProductPage();
     CheckOutPage checkOutPage = new CheckOutPage();
 
@@ -25,5 +27,9 @@ public class TestCheckOut extends DriverSetup {
         checkOutPage.clickOnElement(checkOutPage.finishButton);
         Assert.assertEquals(checkOutPage.getElementText(checkOutPage.greetingsText), "Thank you for your order!");
 
+    }
+    @Test
+    public void testCheckOutAuto(){
+        signInPage.doSignIn(signInPage.email, signInPage.password);
     }
 }

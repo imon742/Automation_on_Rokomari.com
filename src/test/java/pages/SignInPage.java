@@ -16,6 +16,20 @@ public class SignInPage extends BasePage{
 
     public By nextButton = By.xpath("//span[normalize-space()='Next']");
 
+    public void doSignIn(String email, String password){
+        loadAWebPage(loginPageURL);
+        clickOnElement(signInButton);
+        clickOnElement(google_Button);
+        writeOnAElement(emailInputBox,email);
+        scrollIntoView(nextButton);
+        clickOnElement(nextButton);
+        writeOnAElement(passwordInputBox,password);
+        scrollIntoView(nextButton);
+        clickOnElement(nextButton);
+
+
+    }
+
 
 
 
