@@ -6,7 +6,7 @@ public class SignInPage extends BasePage{
 
     public String email ="qa.nazmul.101@gmail.com";
     public String password = "SQA.742366742366";
-    public String  loginPageURL = "https://www.rokomari.com/";
+    public String signInPageURL = "https://www.rokomari.com/";
     public String loginPageTitle = "Buy Book Online - Best Online Book Shop in Bangladesh | Rokomari.com";
     public By signInButton = By.xpath("//a[@class='logged-out-user-menu-btn btn btn-secondary']");
     public By google_Button = By.xpath("//button[@class='btn btn-social-google']");
@@ -15,9 +15,10 @@ public class SignInPage extends BasePage{
     public By showPasswordCheckBox = By.xpath("//input[@type='checkbox']");
 
     public By nextButton = By.xpath("//span[normalize-space()='Next']");
+    public By error_message = By.xpath("//p[@class='validation-text']");
 
     public void doSignIn(String email, String password){
-        loadAWebPage(loginPageURL);
+        loadAWebPage(signInPageURL);
         clickOnElement(signInButton);
         clickOnElement(google_Button);
         writeOnAElement(emailInputBox,email);

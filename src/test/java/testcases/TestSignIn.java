@@ -1,5 +1,6 @@
 package testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CheckOutPage;
 import pages.ProductPage;
@@ -12,7 +13,7 @@ public class TestSignIn extends DriverSetup {
     CheckOutPage checkOutPage = new CheckOutPage();
     @Test(description = "Test with valid credentials")
     public void testLoginWithValidCredentials() throws InterruptedException {
-        getBrowser().get(signInPage.loginPageURL);
+        getBrowser().get(signInPage.signInPageURL);
         productPage.clickOnElement(productPage.popUpAdvertise);
         signInPage.clickOnElement(signInPage.signInButton);
         signInPage.clickOnElement(signInPage.google_Button);
@@ -71,6 +72,31 @@ public class TestSignIn extends DriverSetup {
         //Check Out
 
 
+
+
+    }
+
+    @Test
+    public void testWithValidCredentials(){
+        signInPage.loadAWebPage(signInPage.signInPageURL);
+        signInPage.clickOnElement(signInPage.signInButton);
+        signInPage.clickOnElement(signInPage.google_Button);
+        signInPage.writeOnAElement(signInPage.emailInputBox, signInPage.email);
+        signInPage.clickOnElement(signInPage.nextButton);
+        signInPage.writeOnAElement(signInPage.passwordInputBox, signInPage.password);
+        signInPage.clickOnElement(signInPage.showPasswordCheckBox);
+        signInPage.scrollIntoView(signInPage.nextButton);
+        signInPage.clickOnElement(signInPage.nextButton);
+    }
+    @Test
+    public void testWithInvalidEmail(){
+        signInPage.loadAWebPage(signInPage.signInPageURL);
+        signInPage.clickOnElement(signInPage.signInButton);
+        signInPage.clickOnElement(signInPage.google_Button);
+        signInPage.writeOnAElement(signInPage.emailInputBox, "19202103240@");
+        signInPage.clickOnElement(signInPage.nextButton);
+        Assert.assertTrue(signInPage.getElement(signInPage.error_message).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText(signInPage.error_message),"sahskj");
 
 
     }
