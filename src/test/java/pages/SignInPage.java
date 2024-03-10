@@ -15,7 +15,11 @@ public class SignInPage extends BasePage{
     public By showPasswordCheckBox = By.xpath("//input[@type='checkbox']");
 
     public By nextButton = By.xpath("//span[normalize-space()='Next']");
-    public By error_message = By.xpath("//p[@class='validation-text']");
+    public By error_message = By.xpath("//div[@class='o6cuMc Jj6Lae']");
+    public By emailOrPhoneNumberInputBox = By.xpath("//input[@placeholder='Email or phone']");
+    public By error_message_RokomariEnd = By.xpath("//p[@class='validation-text']");
+    public By nextButtonRokomari = By.xpath("//button[@id='js--btn-next']");
+
 
     public void doSignIn(String email, String password){
         loadAWebPage(signInPageURL);

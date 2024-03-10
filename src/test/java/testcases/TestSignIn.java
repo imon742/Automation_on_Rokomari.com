@@ -92,11 +92,13 @@ public class TestSignIn extends DriverSetup {
     public void testWithInvalidEmail(){
         signInPage.loadAWebPage(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
-        signInPage.clickOnElement(signInPage.google_Button);
-        signInPage.writeOnAElement(signInPage.emailInputBox, "19202103240@");
-        signInPage.clickOnElement(signInPage.nextButton);
-        Assert.assertTrue(signInPage.getElement(signInPage.error_message).isDisplayed());
-        Assert.assertEquals(signInPage.getElementText(signInPage.error_message),"sahskj");
+//        signInPage.clickOnElement(signInPage.google_Button);
+//        signInPage.writeOnAElement(signInPage.emailInputBox, "19202103240@");
+//        signInPage.clickOnElement(signInPage.nextButton);
+        signInPage.writeOnAElement(signInPage.emailOrPhoneNumberInputBox,"19202103240@");
+        signInPage.clickOnElement(signInPage.nextButtonRokomari);
+        Assert.assertTrue(signInPage.getElement(signInPage.error_message_RokomariEnd).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText(signInPage.error_message_RokomariEnd),"sahskj");
 
 
     }
