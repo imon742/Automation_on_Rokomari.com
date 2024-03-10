@@ -20,12 +20,12 @@ public class TestCheckOut extends DriverSetup {
         productPage.addProductToCart(productPage.bikeLight);
         productPage.clickOnElement(productPage.shoppingCart);
         checkOutPage.clickOnElement(checkOutPage.checkOut);
-        checkOutPage.writeOnAElement(checkOutPage.firstNameField, "Jhon");
-        checkOutPage.writeOnAElement(checkOutPage.lastNameField, "Right");
-        checkOutPage.writeOnAElement(checkOutPage.postalCode, "2315");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.firstNameField, "Jhon");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.lastNameField, "Right");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.postalCode, "2315");
         checkOutPage.clickOnElement(checkOutPage.continueButton);
         checkOutPage.clickOnElement(checkOutPage.finishButton);
-        Assert.assertEquals(checkOutPage.getElementText(checkOutPage.greetingsText), "Thank you for your order!");
+        Assert.assertEquals(checkOutPage.getElementText_GetText(checkOutPage.greetingsText), "Thank you for your order!");
 
     }
     @Test

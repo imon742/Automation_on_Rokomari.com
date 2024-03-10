@@ -13,7 +13,7 @@ public class TestProductPage extends DriverSetup {
     public void testProductDetails(){
         loginPage.doLogin("standard_user", "secret_sauce");
         productPage.clickOnElement(productPage.bikeLight);
-        Assert.assertEquals(productPage.getElementText(productPage.productTitle), "Sauce Labs Bike Light");
+        Assert.assertEquals(productPage.getElementText_GetText(productPage.productTitle), "Sauce Labs Bike Light");
     }
 
     @Test
@@ -21,8 +21,8 @@ public class TestProductPage extends DriverSetup {
         loginPage.doLogin("standard_user", "secret_sauce");
         productPage.clickOnElement(productPage.bikeLight);
         productPage.clickOnElement(productPage.addToChatButton);
-        Assert.assertTrue(productPage.getElement(productPage.removeButton).isDisplayed());
-        Assert.assertEquals(productPage.getElementText(productPage.cartCount), "1");
+        Assert.assertTrue(productPage.getElement_findElement(productPage.removeButton).isDisplayed());
+        Assert.assertEquals(productPage.getElementText_GetText(productPage.cartCount), "1");
     }
     //Rokomari product page
     @Test
@@ -30,7 +30,7 @@ public class TestProductPage extends DriverSetup {
         getBrowser().get(productPage.productPageURLRokomari);
         productPage.clickOnElement(productPage.popUpAdvertise);
         productPage.clickOnElement(productPage.bikeadvertise);
-        productPage.hoverOnElement(productPage.hoverButtonলেখক);
+        productPage.hoverOnElement_ClickAndHold(productPage.hoverButtonলেখক);
         productPage.clickOnElement(productPage.writer_হুমায়ূন_আহমেদ);
         productPage.scrollIntoView(productPage.categories_সমকালীন_উপন্যাস);
         productPage.clickOnElement(productPage.categories_সমকালীন_উপন্যাস);

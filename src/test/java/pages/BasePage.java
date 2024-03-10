@@ -13,41 +13,42 @@ import static uitilities.DriverSetup.getBrowser;
 
 public class BasePage {
 
-    public WebElement getElement(By locator){
+    public WebElement getElement_findElement(By locator){
        return getBrowser().findElement(locator);
     }
 
 
     public void clickOnElement(By locator){
-        getElement(locator).click();
+        getElement_findElement(locator).click();
     }
 
-    public void writeOnAElement(By locator, String text){
-        getElement(locator).sendKeys(text);
+    public void writeOnAElement_SendKeys(By locator, String text){
+        getElement_findElement(locator).sendKeys(text);
     }
-    public void clearInputOnElement(By locator){getElement(locator).clear();}
+    public void clearInputOnElement(By locator){
+        getElement_findElement(locator).clear();}
 
-    public void hoverOnElement(By locator){
+    public void hoverOnElement_ClickAndHold(By locator){
         Actions actions = new Actions(getBrowser());
-        actions.clickAndHold(getElement(locator)).build().perform();
+        actions.clickAndHold(getElement_findElement(locator)).build().perform();
     }
     public void moveToElement(By locator){
         Actions actions = new Actions(getBrowser());
-        actions.moveToElement(getElement(locator)).build().perform();
+        actions.moveToElement(getElement_findElement(locator)).build().perform();
 
     }
     public void scrollIntoView(By locator) {
         Actions actions = new Actions(getBrowser());
-        actions.moveToElement(getElement(locator)).build().perform();
+        actions.moveToElement(getElement_findElement(locator)).build().perform();
     }
 
 
-    public void loadAWebPage(String url){
+    public void loadAWebPage_GetBrowserGet(String url){
         getBrowser().get(url);
     }
 
-    public String getElementText(By locator){
-        return getElement(locator).getText();
+    public String getElementText_GetText(By locator){
+        return getElement_findElement(locator).getText();
     }
 
     public void takeScreenShot(String name){

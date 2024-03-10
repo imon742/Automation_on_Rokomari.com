@@ -17,18 +17,23 @@ public class SignInPage extends BasePage{
     public By nextButton = By.xpath("//span[normalize-space()='Next']");
     public By error_message = By.xpath("//div[@class='o6cuMc Jj6Lae']");
     public By emailOrPhoneNumberInputBox = By.xpath("//input[@placeholder='Email or phone']");
-    public By error_message_RokomariEnd = By.xpath("//p[@class='validation-text']");
+    public By message_error_RokomariEnd = By.xpath("//p[@class='validation-text']");
+    public By message_OTP_RokomariEnd = By.xpath("//p[@class='validation-text success']");
     public By nextButtonRokomari = By.xpath("//button[@id='js--btn-next']");
+    public By otpInputBox = By.xpath("//input[@placeholder='OTP']");
+    public By loginButton = By.xpath("//form[@id='otp-login-form']//button[@type='submit'][normalize-space()='Login']");
+    public By message_invalidOTP = By.xpath("//p[normalize-space()='Invalid OTP!']");
+
 
 
     public void doSignIn(String email, String password){
-        loadAWebPage(signInPageURL);
+        loadAWebPage_GetBrowserGet(signInPageURL);
         clickOnElement(signInButton);
         clickOnElement(google_Button);
-        writeOnAElement(emailInputBox,email);
+        writeOnAElement_SendKeys(emailInputBox,email);
         scrollIntoView(nextButton);
         clickOnElement(nextButton);
-        writeOnAElement(passwordInputBox,password);
+        writeOnAElement_SendKeys(passwordInputBox,password);
         scrollIntoView(nextButton);
         clickOnElement(nextButton);
 

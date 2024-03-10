@@ -19,11 +19,11 @@ public class TestSignIn extends DriverSetup {
         signInPage.clickOnElement(signInPage.google_Button);
         //Thread.sleep(3000);
 
-        signInPage.writeOnAElement(signInPage.emailInputBox, signInPage.email);
+        signInPage.writeOnAElement_SendKeys(signInPage.emailInputBox, signInPage.email);
         signInPage.clickOnElement(signInPage.nextButton);
         Thread.sleep(3000);
 
-        signInPage.writeOnAElement(signInPage.passwordInputBox, signInPage.password);
+        signInPage.writeOnAElement_SendKeys(signInPage.passwordInputBox, signInPage.password);
         Thread.sleep(3000);
         signInPage.scrollIntoView(signInPage.nextButton);
 
@@ -33,7 +33,7 @@ public class TestSignIn extends DriverSetup {
 
 //        productPage.clickOnElement(productPage.popUpAdvertise);
         productPage.clickOnElement(productPage.bikeadvertise);
-        productPage.hoverOnElement(productPage.hoverButtonলেখক);
+        productPage.hoverOnElement_ClickAndHold(productPage.hoverButtonলেখক);
         productPage.clickOnElement(productPage.writer_হুমায়ূন_আহমেদ);
         productPage.scrollIntoView(productPage.categories_সমকালীন_উপন্যাস);
         productPage.clickOnElement(productPage.categories_সমকালীন_উপন্যাস);
@@ -55,13 +55,13 @@ public class TestSignIn extends DriverSetup {
         checkOutPage.clearInputOnElement(checkOutPage.nameInputFiled);
         Thread.sleep(3000);
 
-        checkOutPage.writeOnAElement(checkOutPage.nameInputFiled,"Nazmul Islam Emon");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.nameInputFiled,"Nazmul Islam Emon");
         Thread.sleep(3000);
 
-        checkOutPage.writeOnAElement(checkOutPage.phoneNumberInputFiled,"0171202222");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.phoneNumberInputFiled,"0171202222");
         Thread.sleep(3000);
 
-        checkOutPage.writeOnAElement(checkOutPage.alternativePhoneNumberInputFiled,"01717202111");
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.alternativePhoneNumberInputFiled,"01717202111");
         Thread.sleep(3000);
         checkOutPage.clickOnElement(checkOutPage.selectCity);
         Thread.sleep(3000);
@@ -78,28 +78,53 @@ public class TestSignIn extends DriverSetup {
 
     @Test
     public void testWithValidCredentials(){
-        signInPage.loadAWebPage(signInPage.signInPageURL);
+        signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
         signInPage.clickOnElement(signInPage.google_Button);
-        signInPage.writeOnAElement(signInPage.emailInputBox, signInPage.email);
+        signInPage.writeOnAElement_SendKeys(signInPage.emailInputBox, signInPage.email);
         signInPage.clickOnElement(signInPage.nextButton);
-        signInPage.writeOnAElement(signInPage.passwordInputBox, signInPage.password);
+        signInPage.writeOnAElement_SendKeys(signInPage.passwordInputBox, signInPage.password);
         signInPage.clickOnElement(signInPage.showPasswordCheckBox);
         signInPage.scrollIntoView(signInPage.nextButton);
         signInPage.clickOnElement(signInPage.nextButton);
     }
     @Test
+    public void testWithNULLInput(){
+        signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
+        signInPage.clickOnElement(signInPage.signInButton);
+        signInPage.writeOnAElement_SendKeys(signInPage.emailOrPhoneNumberInputBox,"");
+        signInPage.clickOnElement(signInPage.nextButtonRokomari);
+        Assert.assertTrue(signInPage.getElement_findElement(signInPage.message_error_RokomariEnd).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_error_RokomariEnd),"Please enter a valid email or phone number.");
+    }
+    @Test
     public void testWithInvalidEmail(){
-        signInPage.loadAWebPage(signInPage.signInPageURL);
+        signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
 //        signInPage.clickOnElement(signInPage.google_Button);
 //        signInPage.writeOnAElement(signInPage.emailInputBox, "19202103240@");
 //        signInPage.clickOnElement(signInPage.nextButton);
-        signInPage.writeOnAElement(signInPage.emailOrPhoneNumberInputBox,"19202103240@");
+        signInPage.writeOnAElement_SendKeys(signInPage.emailOrPhoneNumberInputBox,"19202103240@");
         signInPage.clickOnElement(signInPage.nextButtonRokomari);
-        Assert.assertTrue(signInPage.getElement(signInPage.error_message_RokomariEnd).isDisplayed());
-        Assert.assertEquals(signInPage.getElementText(signInPage.error_message_RokomariEnd),"sahskj");
+        Assert.assertTrue(signInPage.getElement_findElement(signInPage.message_error_RokomariEnd).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_error_RokomariEnd),"Invalid email! Please enter a valid email or phone number.");
+    }
+    @Test
+    public void testWithValidEmailInvalidOTP() throws InterruptedException {
+        signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
+        signInPage.clickOnElement(signInPage.signInButton);
+        signInPage.writeOnAElement_SendKeys(signInPage.emailOrPhoneNumberInputBox,"nazmulislamemon007@gmail.com");
+        signInPage.clickOnElement(signInPage.nextButtonRokomari);
+        Assert.assertTrue(signInPage.getElement_findElement(signInPage.message_OTP_RokomariEnd).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_OTP_RokomariEnd),"OTP sent to your email. Please enter OTP bellow.");
+        signInPage.writeOnAElement_SendKeys(signInPage.otpInputBox,"5555");
+        signInPage.scrollIntoView(signInPage.loginButton);
 
 
+        signInPage.clickOnElement(signInPage.loginButton);
+        Thread.sleep(2000);
+
+        Assert.assertTrue(signInPage.getElement_findElement(signInPage.message_invalidOTP).isDisplayed());
+        Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_invalidOTP),"Invalid OTP!");
     }
 }
