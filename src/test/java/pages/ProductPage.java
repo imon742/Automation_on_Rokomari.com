@@ -33,6 +33,8 @@ public class ProductPage extends BasePage{
    public By nextPage = By.xpath("//a[normalize-space()='Next']");
    public By page2 = By.xpath("//a[normalize-space()='2']");
    public By searchBar = By.xpath("//input[@id='js--search']");
+   public By searchButton = By.xpath("//button[@type='submit']");
+
 
    public By book_অপেক্ষা = By.xpath("//h4[contains(text(),'অপেক্ষা')]");
     public By addToCart = By.xpath("//div[@title='অপেক্ষা হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");

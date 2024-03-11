@@ -41,6 +41,9 @@ public class TestSignIn extends DriverSetup {
         productPage.clickOnElement(productPage.categories_রচনা_সংকলন_ও_সমগ্র);
         productPage.scrollIntoView(productPage.nextPage);
         productPage.clickOnElement(productPage.page2);
+        productPage.writeOnAElement_SendKeys(productPage.searchBar,"অপেক্ষা");
+        productPage.clickOnElement(productPage.searchButton);
+
 
         productPage.scrollIntoView(productPage.book_অপেক্ষা);
         //  productPage.clickOnElement(productPage.book_অপেক্ষা);
