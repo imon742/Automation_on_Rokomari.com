@@ -29,9 +29,23 @@ public class TestCheckOut extends DriverSetup {
 
     }
     @Test
-    public void testCheckOutAuto(){
+    public void testCheckOutAuto() throws InterruptedException {
 
-       // signInPage.doSignIn(signInPage.email, signInPage.password);
+        signInPage.doSignIn(signInPage.email, signInPage.password);
         productPage.addProductToCart(productPage.book_অপেক্ষা);
+        checkOutPage.clearInputOnElement(checkOutPage.nameInputFiled);
+        Thread.sleep(3000);
+
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.nameInputFiled,"Nazmul Islam Emon");
+        Thread.sleep(3000);
+
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.phoneNumberInputFiled,"0171202222");
+        Thread.sleep(3000);
+
+        checkOutPage.writeOnAElement_SendKeys(checkOutPage.alternativePhoneNumberInputFiled,"01717202111");
+        Thread.sleep(3000);
+        checkOutPage.clickOnElement(checkOutPage.selectCity);
+        Thread.sleep(3000);
+        // checkOutPage.clickOnElement(checkOutPage.);
     }
 }

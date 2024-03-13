@@ -51,13 +51,18 @@ public class ProductPage extends BasePage{
 
 
    public void addProductToCart(By locator){
-     // clickOnElement(popUpAdvertise);
+      loadAWebPage_GetBrowserGet(productPageURLRokomari);
+
+      // clickOnElement(popUpAdvertise);
    //   clickOnElement(bikeadvertise);
       writeOnAElement_SendKeys(searchBar,"অপেক্ষা");
       clickOnElement(searchButton);
       scrollIntoView(locator);
       moveToElement(locator);
       clickOnElement(addToCart);
+      clickOnElement(cart_Button);
+      scrollIntoView(placeOrderButton);
+      clickOnElement(placeOrderButton);
    }
 
 }
