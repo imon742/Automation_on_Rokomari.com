@@ -30,6 +30,8 @@ public class TestCheckOut extends DriverSetup {
     }
     @Test
     public void testCheckOutAuto(){
-        signInPage.doSignIn(signInPage.email, signInPage.password);
+
+       // signInPage.doSignIn(signInPage.email, signInPage.password);
+        productPage.addProductToCart(productPage.book_অপেক্ষা);
     }
 }
