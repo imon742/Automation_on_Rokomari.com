@@ -8,7 +8,7 @@
                     <include name="purchaseProduct"/>
                 </methods>
             </class>
-            <class name="testcases.TestLogin">
+            <class name="testcases.TestSignIn">
                 <methods>
                     <include name="testLoginWithValidCredentials"/>
                     <exclude name="testLoginWithInvalidPassword"/>

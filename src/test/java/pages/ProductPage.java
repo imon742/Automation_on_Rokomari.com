@@ -3,24 +3,25 @@ package pages;
 import org.openqa.selenium.By;
 
 public class ProductPage extends BasePage{
-
-
-   public String  productPageURL = "https://www.saucedemo.com/inventory.html";
-
-   public  By bikeLight = By.xpath("//div[normalize-space()='Sauce Labs Bike Light']");
-
-   public By productTitle = By.xpath("//div[@class='inventory_details_name large_size']");
-   public  By addToChatButton = By.id("add-to-cart-sauce-labs-bike-light");
-
-   public By removeButton = By.xpath("//button[@id='remove-sauce-labs-bike-light']");
-
-   public By cartCount = By.xpath("//span[@class='shopping_cart_badge']");
-
-   public By shoppingCart = By.xpath("//a[@class='shopping_cart_link']");
-
+//
+//
+//   public String  productPageURL = "https://www.saucedemo.com/inventory.html";
+//
+//   public  By bikeLight = By.xpath("//div[normalize-space()='Sauce Labs Bike Light']");
+//
+//   public By productTitle = By.xpath("//div[@class='inventory_details_name large_size']");
+//   public  By addToChatButton = By.id("add-to-cart-sauce-labs-bike-light");
+//
+//   public By removeButton = By.xpath("//button[@id='remove-sauce-labs-bike-light']");
+//
+//   public By cartCount = By.xpath("//span[@class='shopping_cart_badge']");
+//
+//   public By shoppingCart = By.xpath("//a[@class='shopping_cart_link']");
+//
 
    //Rokomari Start Here
    public String productPageURLRokomari = "https://www.rokomari.com/book";
+   public String cartLink = "https://www.rokomari.com/cart/new";
    public By bikeadvertise = By.xpath("//span[@aria-hidden='true']");
    public By popUpAdvertise = By.xpath("//div[@id='js--entry-popup']//i[@class='ion-close-round']");
 
@@ -44,15 +45,19 @@ public class ProductPage extends BasePage{
    public By placeOrderButton = By.xpath("//span[normalize-space()='Place Order']");
    public By orderAsAGiftButton = By.xpath("#js-continue-to-gift-shipping");
 
+   public By removeBook = By.xpath("//img[@alt='trash']");
+   public By confirmRemove = By.xpath("//button[contains(text(),'হ্যাঁ')]");
 
 
 
 
 
 
-   public void addProductToCart(By locator){
+
+   public void addProductToCart(By locator) throws InterruptedException {
       loadAWebPage_GetBrowserGet(productPageURLRokomari);
-
+      SignInPage signInPage = new SignInPage();
+      signInPage.doSignIn(signInPage.email,signInPage.password);
       // clickOnElement(popUpAdvertise);
    //   clickOnElement(bikeadvertise);
       writeOnAElement_SendKeys(searchBar,"অপেক্ষা");
@@ -63,6 +68,11 @@ public class ProductPage extends BasePage{
       clickOnElement(cart_Button);
       scrollIntoView(placeOrderButton);
       clickOnElement(placeOrderButton);
+   }
+   public void removeFromCart (By locator){
+      loadAWebPage_GetBrowserGet(cartLink);
+      clickOnElement(removeBook);
+      clickOnElement(confirmRemove);
    }
 
 }

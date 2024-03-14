@@ -26,18 +26,24 @@ public class SignInPage extends BasePage{
 
 
 
-    public void doSignIn(String email, String password){
+    public void doSignIn(String email, String password) throws InterruptedException {
         loadAWebPage_GetBrowserGet(signInPageURL);
         clickOnElement(signInButton);
+        Thread.sleep(1000);
         clickOnElement(google_Button);
+        Thread.sleep(1000);
         writeOnAElement_SendKeys(emailInputBox,email);
+        Thread.sleep(1000);
         scrollIntoView(nextButton);
+        Thread.sleep(1000);
         clickOnElement(nextButton);
+        Thread.sleep(1000);
         writeOnAElement_SendKeys(passwordInputBox,password);
+        Thread.sleep(1000);
         scrollIntoView(nextButton);
+        Thread.sleep(1000);
         clickOnElement(nextButton);
-
-
+        Thread.sleep(1000);
     }
 
 
