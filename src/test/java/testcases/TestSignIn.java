@@ -1,5 +1,6 @@
 package testcases;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.SignInPage;
@@ -8,6 +9,7 @@ import uitilities.DriverSetup;
 public class TestSignIn extends DriverSetup {
     SignInPage signInPage = new SignInPage();
     @Test(description = "Test with valid credentials")
+    @Description("Test with valid credentials")
     public void testWithValidCredentials(){
         signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
@@ -21,7 +23,8 @@ public class TestSignIn extends DriverSetup {
         Assert.assertEquals(signInPage.getElementText_GetText(signInPage.userInfo),"Nazmul Islam");
         signInPage.doSignOut();
     }
-    @Test(description = "Test with NULLInput")
+    @Test(description = "Test with NULL Input")
+    @Description("Test with NULL Input")
     public void testWithNULLInput(){
         signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
@@ -31,6 +34,7 @@ public class TestSignIn extends DriverSetup {
         Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_error_RokomariEnd),"Please enter a valid email or phone number.");
     }
     @Test(description = "Test with invalid Email")
+    @Description("Test with invalid Email")
     public void testWithInvalidEmail(){
         signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);
@@ -40,6 +44,7 @@ public class TestSignIn extends DriverSetup {
         Assert.assertEquals(signInPage.getElementText_GetText(signInPage.message_error_RokomariEnd),"Invalid email! Please enter a valid email or phone number.");
     }
     @Test(description = "Test with valid Email Invalid OTP")
+    @Description("Test with valid Email Invalid OTP")
     public void testWithValidEmailInvalidOTP(){
         signInPage.loadAWebPage_GetBrowserGet(signInPage.signInPageURL);
         signInPage.clickOnElement(signInPage.signInButton);

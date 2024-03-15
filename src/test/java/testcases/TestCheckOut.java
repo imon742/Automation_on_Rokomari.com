@@ -1,5 +1,6 @@
 package testcases;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CheckOutPage;
@@ -13,6 +14,8 @@ public class TestCheckOut extends DriverSetup {
     CheckOutPage checkOutPage = new CheckOutPage();
 
     @Test
+    @Description("Test product checkout")
+
     public void testCheckOutAuto() throws InterruptedException {
         productPage.addProductToCart(productPage.book_অপেক্ষা);
         checkOutPage.clearInputOnElement(checkOutPage.nameInputFiled);

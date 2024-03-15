@@ -1,5 +1,6 @@
 package testcases;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductPage;
@@ -8,6 +9,8 @@ import uitilities.DriverSetup;
 public class TestProductPage extends DriverSetup {
     ProductPage productPage = new ProductPage();
     @Test(description = "Select Lekhok Then Humayen Ahamed Then browse throw Page")
+    @Description("Select Lekhok Then Humayen Ahamed Then browse throw Page")
+
     public void testRokomariFilterAndPages() {
         getBrowser().get(productPage.productPageURLRokomari);
         productPage.clickOnElement(productPage.popUpAdvertise);
@@ -22,6 +25,7 @@ public class TestProductPage extends DriverSetup {
         productPage.clickOnElement(productPage.page2);
         productPage.scrollIntoView(productPage.nextPage);
         productPage.clickOnElement(productPage.nextPage);
+        productPage.scrollIntoView(productPage.book_অপেক্ষা);
         productPage.scrollIntoView(productPage.book_অপেক্ষা);
         productPage.moveToElement(productPage.book_অপেক্ষা);
         productPage.clickOnElement(productPage.addToCart);

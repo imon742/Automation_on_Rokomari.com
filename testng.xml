@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" thread-count="3" parallel="classes">
-    <test verbose="2" preserve-order="true" name="C:/Users/joshf/Downloads/WebAutomation21POM">
+    <test verbose="2" preserve-order="true"
+          name="H:/SQA Project/Automation01/Automation_on_Rokomari.com/src/test/java/testcases">
         <classes>
             <class name="testcases.TestCheckOut">
                 <methods>
-                    <include name="purchaseProduct"/>
-                </methods>
-            </class>
-            <class name="testcases.TestSignIn">
-                <methods>
-                    <include name="testLoginWithValidCredentials"/>
-                    <exclude name="testLoginWithInvalidPassword"/>
-                    <exclude name="testLoginWithInvalidUsername"/>
-                    <exclude name="testLoginWithInvalidUsernamePassword"/>
-                    <exclude name="testLoginWithoutPassword"/>
-                    <include name="testLoginWithoutUsername"/>
-                    <include name="testLoginWithoutUsernamePassword"/>
-                    <exclude name="testLoginWithInvalidCredentials"/>
+                    <include name="testCheckOutAuto"/>
                 </methods>
             </class>
             <class name="testcases.TestProductPage">
                 <methods>
-                    <include name="testProductDetails"/>
-                    <include name="testAddCart"/>
+                    <include name="testRokomariFilterAndPages"/>
+                </methods>
+            </class>
+            <class name="testcases.TestSignIn">
+                <methods>
+                    <include name="testWithValidCredentials"/>
+                    <include name="testWithNULLInput"/>
+                    <include name="testWithInvalidEmail"/>
+                    <include name="testWithValidEmailInvalidOTP"/>
                 </methods>
             </class>
         </classes>
