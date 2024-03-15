@@ -38,7 +38,13 @@ public class ProductPage extends BasePage{
 
 
    public By book_অপেক্ষা = By.xpath("//h4[contains(text(),'অপেক্ষা')]");
-    public By addToCart = By.xpath("//div[@title='অপেক্ষা হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
+   public By addToCart = By.xpath("//div[@title='অপেক্ষা হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
+
+   public By book_মিসির_আলির = By.xpath("//h4[contains(text(),'মিসির আলির অমীমাংসিত রহস্য')]");
+   public By addToCart_মিসির = By.xpath("//div[@title='মিসির আলি আনসলভ্ড হুমায়ূন আহমেদ']//div[1]//div[3]//button[1]");
+
+
+
    public By cart_ButtonInMiddleOfUI = By.xpath("//*[name()='path' and contains(@d,'M394.044,1')]");
    public By cart_Button = By.xpath("//a[@id='js-cart-menu']//*[name()='svg']");
 

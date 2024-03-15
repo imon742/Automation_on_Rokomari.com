@@ -7,24 +7,8 @@ import uitilities.DriverSetup;
 
 public class TestProductPage extends DriverSetup {
     ProductPage productPage = new ProductPage();
-//    @Test
-//    public void testProductDetails(){
-//        loginPage.doLogin("standard_user", "secret_sauce");
-//        productPage.clickOnElement(productPage.bikeLight);
-//        Assert.assertEquals(productPage.getElementText_GetText(productPage.productTitle), "Sauce Labs Bike Light");
-//    }
-//
-//    @Test
-//    public void testAddCart(){
-//        loginPage.doLogin("standard_user", "secret_sauce");
-//        productPage.clickOnElement(productPage.bikeLight);
-//        productPage.clickOnElement(productPage.addToChatButton);
-//        Assert.assertTrue(productPage.getElement_findElement(productPage.removeButton).isDisplayed());
-//        Assert.assertEquals(productPage.getElementText_GetText(productPage.cartCount), "1");
-//    }
-    //Rokomari product page
-    @Test
-    public void testRokomariFilterAndPages() throws InterruptedException {
+    @Test(description = "Select Lekhok Then Humayen Ahamed Then browse throw Page")
+    public void testRokomariFilterAndPages() {
         getBrowser().get(productPage.productPageURLRokomari);
         productPage.clickOnElement(productPage.popUpAdvertise);
         productPage.clickOnElement(productPage.bikeadvertise);
@@ -36,16 +20,13 @@ public class TestProductPage extends DriverSetup {
         productPage.clickOnElement(productPage.categories_রচনা_সংকলন_ও_সমগ্র);
         productPage.scrollIntoView(productPage.nextPage);
         productPage.clickOnElement(productPage.page2);
-
+        productPage.scrollIntoView(productPage.nextPage);
+        productPage.clickOnElement(productPage.nextPage);
         productPage.scrollIntoView(productPage.book_অপেক্ষা);
-      //  productPage.clickOnElement(productPage.book_অপেক্ষা);
-     //  productPage.hoverOnElement(productPage.book_অপেক্ষা);
         productPage.moveToElement(productPage.book_অপেক্ষা);
         productPage.clickOnElement(productPage.addToCart);
-
         productPage.clickOnElement(productPage.cart_Button);
-        Thread.sleep(5000);
-
+        productPage.clickOnElement(productPage.removeBook);
     }
 
 }

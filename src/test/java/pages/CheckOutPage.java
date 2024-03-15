@@ -18,16 +18,4 @@ public class CheckOutPage extends  BasePage{
 
     public By userInfo = By.xpath("//span[@class='user-name']");
     public By signOut = By.xpath("//a[@class='dropdown-item js--logout-button']");
-
-
-
-
-
-
-
-
-
-
-
-
 }

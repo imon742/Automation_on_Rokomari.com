@@ -12,20 +12,6 @@ public class TestCheckOut extends DriverSetup {
     ProductPage productPage = new ProductPage();
     CheckOutPage checkOutPage = new CheckOutPage();
 
-//    @Test
-//    public void purchaseProduct(){
-//        loginPage.doLogin("standard_user", "secret_sauce");
-//        productPage.addProductToCart(productPage.bikeLight);
-//        productPage.clickOnElement(productPage.shoppingCart);
-//        checkOutPage.clickOnElement(checkOutPage.checkOut);
-//        checkOutPage.writeOnAElement_SendKeys(checkOutPage.firstNameField, "Jhon");
-//        checkOutPage.writeOnAElement_SendKeys(checkOutPage.lastNameField, "Right");
-//        checkOutPage.writeOnAElement_SendKeys(checkOutPage.postalCode, "2315");
-//        checkOutPage.clickOnElement(checkOutPage.continueButton);
-//        checkOutPage.clickOnElement(checkOutPage.finishButton);
-//        Assert.assertEquals(checkOutPage.getElementText_GetText(checkOutPage.greetingsText), "Thank you for your order!");
-//
-//    }
     @Test
     public void testCheckOutAuto() throws InterruptedException {
         productPage.addProductToCart(productPage.book_অপেক্ষা);
@@ -34,7 +20,6 @@ public class TestCheckOut extends DriverSetup {
         checkOutPage.writeOnAElement_SendKeys(checkOutPage.phoneNumberInputFiled,"0171202222");
         checkOutPage.writeOnAElement_SendKeys(checkOutPage.alternativePhoneNumberInputFiled,"01717202111");
         checkOutPage.clickOnElement(checkOutPage.selectCity);
-        // checkOutPage.clickOnElement(checkOutPage.);
         checkOutPage.moveToElement(checkOutPage.selectCity);
         checkOutPage.clickOnElement(checkOutPage.cityDhaka);
         checkOutPage.scrollIntoView(checkOutPage.addressInputFiled);
@@ -47,7 +32,7 @@ public class TestCheckOut extends DriverSetup {
         checkOutPage.clickOnElement(checkOutPage.rocketRadioButton);
         checkOutPage.scrollIntoView(checkOutPage.sslRadioButton);
         checkOutPage.clickOnElement(checkOutPage.sslRadioButton);
-       productPage.removeFromCart(productPage.removeBook);
+        productPage.removeFromCart(productPage.removeBook);
         productPage.removeFromCart(productPage.removeBook);
         checkOutPage.clickOnElement(checkOutPage.userInfo);
         checkOutPage.clickOnElement(checkOutPage.signOut);
