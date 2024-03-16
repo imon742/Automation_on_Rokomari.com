@@ -2,11 +2,11 @@
 
 # Web Automation Testing Project with Selenium (Java)
 
-Welcome to the Web Automation Testing project using Selenium in Java! This project focuses on automating various web elements and actions on popular websites in our country. The aim is to streamline and enhance the testing process by automating tasks such as clicking, hovering, scrolling, handling iframes, OTPs, tab creation, window manipulation, maximizing, minimizing, and more.
+Welcome to the Web Automation Testing project using Selenium in Java! This project focuses on automating various web elements and actions on the Rokomari website. The aim is to streamline and enhance the testing process by automating tasks such as sign-up, navigation, filtering, adding to cart, shipping, and logging out.
 
 ## Project Overview
 
-This project is designed to demonstrate the capabilities of Selenium in Java for web automation testing. By automating manual tasks, we aim to improve efficiency and accuracy in testing workflows.
+This project is designed to demonstrate the capabilities of Selenium in Java for web automation testing on the Rokomari website. By automating manual tasks, we aim to improve efficiency and accuracy in testing workflows.
 
 ## Features
 
@@ -29,13 +29,19 @@ This project is designed to demonstrate the capabilities of Selenium in Java for
 
 1. **Clone the repository:**
 
+
 git clone https://github.com/imon742/Automation_on_Rokomari.com.git
 
+markdown
+Copy code
 
 2. **Install dependencies:**
 
 // If using Maven
 mvn clean install
+
+markdown
+Copy code
 
 3. **Set up environment:**
 
@@ -47,6 +53,16 @@ mvn clean install
 - Update `config.properties` with your Google account credentials.
 
 5. **Run the tests:**
+
+// If using Maven
+mvn test
+
+csharp
+Copy code
+
+## Project Structure
+
+The project directory is organized as follows:
 
 Automation_on_Rokomari.com/
 │
@@ -78,7 +94,4 @@ Copy code
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
-
- 
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
