@@ -29,11 +29,7 @@ This project is designed to demonstrate the capabilities of Selenium in Java for
 
 1. **Clone the repository:**
 
-
 git clone https://github.com/imon742/Automation_on_Rokomari.com.git
-
-markdown
-Copy code
 
 2. **Install dependencies:**
 
@@ -41,7 +37,6 @@ Copy code
 mvn clean install
 
 markdown
-Copy code
 
 3. **Set up environment:**
 
@@ -52,36 +47,13 @@ Copy code
 
 - Update `config.properties` with your Google account credentials.
 
-5. **Run the tests:**
+## Allure Reports
 
-// If using Maven
-mvn test
+### Report 1
+![Report 1](Images/allure-report-1.png)
 
-csharp
-Copy code
-
-## Project Structure
-
-The project directory is organized as follows:
-
-Automation_on_Rokomari.com/
-│
-├── src/
-│ ├── main/
-│ │ └── java/ # Contains main Java classes (if any)
-│ │
-│ └── test/
-│ ├── java/ # Contains test scripts
-│ │ └── testcases/ # Test scripts organized by functionality
-│ │
-│ └── resources/ # Contains configuration files and test data
-│ └── config.properties # Configuration file with user credentials
-│
-├── pom.xml # Maven project configuration file
-└── README.md # Project README file
-
-markdown
-Copy code
+### Report 2
+![Report 2](Images/allure-report-2.png)
 
 ## Note
 
