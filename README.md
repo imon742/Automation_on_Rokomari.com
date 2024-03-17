@@ -6,7 +6,7 @@ Welcome to the Web Automation Testing project using Selenium in Java! This proje
 
 ## Project Overview
 
-This project is designed to demonstrate the capabilities of Selenium in Java for web automation testing on the Rokomari website. By automating manual tasks, we aim to improve efficiency and accuracy in testing workflows.
+This project showcases the implementation of sanity testing techniques on the Rokomari website. Using Selenium in Java, we have automated key functionalities to ensure the stability and reliability of the website. Through this initiative, we aim to enhance efficiency and accuracy in testing procedures, ultimately contributing to the overall quality assurance process. By automating manual tasks, we aim to improve efficiency and accuracy in testing workflows.
 
 ## Features
 
